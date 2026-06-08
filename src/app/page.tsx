@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
+import Research from "@/components/sections/Research";
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        {/* Remaining sections: Research, Notes, Contact — coming next */}
+        <Research />
+        {/* Remaining sections: Notes, Contact — coming next */}
       </main>
     </>
   );
