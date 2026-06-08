@@ -4,6 +4,7 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Research from "@/components/sections/Research";
 import Notes from "@/components/sections/Notes";
+import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <Projects />
         <Research />
         <Notes />
-        {/* Remaining sections: Contact — coming next */}
+        <Contact />
       </main>
     </>
   );
