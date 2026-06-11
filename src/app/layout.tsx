@@ -15,9 +15,24 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://asliddin-ergashev.com"),
   title: "Asliddin Ergashev — Student & Freelance Web Developer",
   description:
     "CS/IS student at University of Bamberg and freelance web developer. Building at the intersection of academic research and technical craft.",
+  openGraph: {
+    type: "website",
+    url: "https://asliddin-ergashev.com",
+    title: "Asliddin Ergashev — Student & Freelance Web Developer",
+    description:
+      "CS/IS student at University of Bamberg and freelance web developer. Building at the intersection of academic research and technical craft.",
+    siteName: "Asliddin Ergashev",
+  },
+  twitter: {
+    card: "summary",
+    title: "Asliddin Ergashev — Student & Freelance Web Developer",
+    description:
+      "CS/IS student at University of Bamberg and freelance web developer.",
+  },
 };
 
 export default function RootLayout({
