@@ -1,7 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 
 const PERSONAL = [
-  { label: "Name",       value: "Mo Khusanovich" },
+  { label: "Name",       value: "Asliddin Ergashev" },
   { label: "Based in",   value: "Bamberg, Germany" },
   { label: "Degree",     value: "B.Sc. CS & Information Systems" },
   { label: "University", value: "Otto-Friedrich-Universität Bamberg" },

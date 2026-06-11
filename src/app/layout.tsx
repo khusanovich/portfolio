@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Mo — Student & Freelance Web Developer",
+  title: "Asliddin Ergashev — Student & Freelance Web Developer",
   description:
     "CS/IS student at University of Bamberg and freelance web developer. Building at the intersection of academic research and technical craft.",
 };

@@ -79,7 +79,7 @@ export default function Contact() {
       {/* Footer */}
       <div className="max-w-5xl mx-auto px-6 mt-32 pt-8 border-t border-foreground/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <p className="text-xs font-sans text-foreground/25">
-          © {new Date().getFullYear()} Mo Khusanovich
+          © {new Date().getFullYear()} Asliddin Ergashev
         </p>
         <p className="text-xs font-sans text-foreground/25">
           Built with Next.js &amp; Tailwind CSS
