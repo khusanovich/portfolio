@@ -4,6 +4,7 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Research from "@/components/sections/Research";
 import Notes from "@/components/sections/Notes";
+import Vlog from "@/components/sections/Vlog";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Projects />
         <Research />
         <Notes />
+        <Vlog />
         <Contact />
       </main>
     </>
