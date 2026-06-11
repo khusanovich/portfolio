@@ -2,8 +2,6 @@ import FadeIn from "@/components/FadeIn";
 
 const PERSONAL = [
   { label: "Name",       value: "Mo Khusanovich" },
-  // Remove the Born line if you prefer not to show it publicly
-  { label: "Born",       value: "[YYYY] · Germany" },
   { label: "Based in",   value: "Bamberg, Germany" },
   { label: "Degree",     value: "B.Sc. CS & Information Systems" },
   { label: "University", value: "Otto-Friedrich-Universität Bamberg" },
@@ -24,11 +22,15 @@ const INTERESTS = [
   "Web Architecture",
 ];
 
-// Replace with your actual hobbies
 const HOBBIES = [
-  "Gaming",
-  "Reading",
-  "Music",
+  "Football",
+  "Table Tennis",
+  "Technologies",
+  "Cars",
+  "Traveling",
+  "Cycling",
+  "Running",
+  "Reading AI & Software Engineering Articles",
 ];
 
 export default function About() {
