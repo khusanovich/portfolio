@@ -1,12 +1,8 @@
 import FadeIn from "@/components/FadeIn";
 
 interface ResearchItem {
-  type: string;
-  year: string;
-  title: string;
-  venue: string;
-  status?: string;
-  href?: string;
+  type: string; year: string; title: string;
+  venue: string; status?: string; href?: string;
 }
 
 const RESEARCH: ResearchItem[] = [
@@ -28,40 +24,45 @@ const RESEARCH: ResearchItem[] = [
 
 export default function Research() {
   return (
-    <section id="research" className="py-32 bg-background">
-      <div className="max-w-5xl mx-auto px-6">
-
+    <section id="research" className="py-32 bg-background relative overflow-hidden">
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
         <FadeIn>
-          <p className="text-xs tracking-[0.2em] uppercase text-accent font-sans mb-6">Research</p>
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">Research</p>
           <hr className="border-0 border-t border-white/8 mb-16" />
         </FadeIn>
 
         <div className="max-w-2xl">
           {RESEARCH.map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <article className="py-10 first:pt-0 border-b border-white/8 last:border-b-0 group">
+              <article className="relative py-12 first:pt-0 border-b border-white/8 last:border-b-0 group">
+                {/* Large year in background */}
+                <span
+                  className="absolute right-0 top-1/2 -translate-y-1/2 font-serif font-bold text-foreground/[0.03] select-none pointer-events-none leading-none"
+                  style={{ fontSize: "clamp(60px, 8vw, 110px)" }}
+                  aria-hidden="true"
+                >
+                  {item.year}
+                </span>
+
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-xs font-sans tracking-[0.15em] uppercase text-accent/70">{item.type}</span>
-                  <span className="text-xs font-sans text-foreground/25">{item.year}</span>
+                  <span className="font-mono text-xs tracking-[0.15em] uppercase text-accent/65">{item.type}</span>
                   {item.status && (
-                    <span className="text-xs font-sans text-foreground/25 italic ml-auto">{item.status}</span>
+                    <span className="font-mono text-xs text-foreground/25 italic ml-auto">{item.status}</span>
                   )}
                 </div>
 
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-snug mb-4 group-hover:gradient-text transition-all duration-300">
-                  {item.href ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.title}
-                    </a>
-                  ) : item.title}
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-snug mb-4 group-hover:gradient-text transition-all duration-400">
+                  {item.href
+                    ? <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
+                    : item.title}
                 </h3>
 
-                <p className="text-sm font-sans font-light text-foreground/35 leading-relaxed">{item.venue}</p>
+                <p className="text-sm font-sans font-light text-foreground/30 leading-relaxed">{item.venue}</p>
 
                 {item.href && (
                   <a href={item.href} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 text-xs font-sans text-accent hover:text-foreground transition-colors duration-200">
-                    Read paper <span aria-hidden="true">→</span>
+                    className="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-accent hover:text-foreground transition-colors duration-200">
+                    Read paper →
                   </a>
                 )}
               </article>
@@ -70,9 +71,9 @@ export default function Research() {
         </div>
 
         <FadeIn delay={0.2}>
-          <p className="mt-16 text-xs font-sans text-foreground/25 leading-relaxed max-w-md">
-            Research conducted within the Design Science Research paradigm, focusing on
-            human–AI interaction and AI-augmented learning systems.
+          <p className="mt-16 text-xs font-mono text-foreground/20 leading-relaxed max-w-md">
+            Research within the Design Science Research paradigm — human–AI interaction
+            and AI-augmented learning systems.
           </p>
         </FadeIn>
       </div>
