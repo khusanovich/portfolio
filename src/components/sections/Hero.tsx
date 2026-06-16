@@ -154,7 +154,7 @@ export default function Hero() {
           transition={{ delay: 0.8, duration: 0.4 }}
           className="flex flex-wrap items-baseline gap-x-3 mb-14"
         >
-          <span className="text-xl font-sans font-light text-foreground/30">Student &amp;</span>
+          <span className="text-xl font-sans font-light text-foreground/50">Student &amp;</span>
           <span className="text-xl font-mono text-accent">
             {displayed}<span className="cursor-blink">_</span>
           </span>
@@ -173,7 +173,7 @@ export default function Hero() {
             <span className="group-hover:translate-x-1.5 transition-transform duration-200">→</span>
           </Link>
           <Link href="#contact"
-            className="inline-flex items-center justify-center px-8 py-4 border border-white/10 text-foreground/60 font-mono text-sm tracking-widest hover:border-accent/40 hover:text-accent hover:bg-accent/5 transition-all duration-300">
+            className="inline-flex items-center justify-center px-8 py-4 border border-white/15 text-foreground/75 font-mono text-sm tracking-widest hover:border-accent/40 hover:text-accent hover:bg-accent/5 transition-all duration-300">
             CONTACT ME
           </Link>
         </motion.div>
@@ -186,7 +186,7 @@ export default function Hero() {
           className="mt-24 flex items-center gap-4"
         >
           <div className="w-8 h-px bg-accent/30" />
-          <p className="font-mono text-[10px] text-foreground/18 tracking-[0.3em] uppercase">
+          <p className="font-mono text-[10px] text-foreground/32 tracking-[0.3em] uppercase">
             Otto-Friedrich-Universität Bamberg
           </p>
         </motion.div>
@@ -199,7 +199,7 @@ export default function Hero() {
         transition={{ delay: 1.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="font-mono text-[9px] text-foreground/18 tracking-[0.35em]">SCROLL</span>
+        <span className="font-mono text-[9px] text-foreground/32 tracking-[0.35em]">SCROLL</span>
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}

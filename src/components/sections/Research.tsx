@@ -28,13 +28,13 @@ export default function Research() {
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <FadeIn>
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">Research</p>
-          <hr className="border-0 border-t border-white/8 mb-16" />
+          <hr className="border-0 border-t border-white/12 mb-16" />
         </FadeIn>
 
         <div className="max-w-2xl">
           {RESEARCH.map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <article className="relative py-12 first:pt-0 border-b border-white/8 last:border-b-0 group">
+              <article className="relative py-12 first:pt-0 border-b border-white/12 last:border-b-0 group">
                 {/* Large year in background */}
                 <span
                   className="absolute right-0 top-1/2 -translate-y-1/2 font-serif font-bold text-foreground/[0.03] select-none pointer-events-none leading-none"
@@ -45,9 +45,9 @@ export default function Research() {
                 </span>
 
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="font-mono text-xs tracking-[0.15em] uppercase text-accent/65">{item.type}</span>
+                  <span className="font-mono text-xs tracking-[0.15em] uppercase text-accent/80">{item.type}</span>
                   {item.status && (
-                    <span className="font-mono text-xs text-foreground/25 italic ml-auto">{item.status}</span>
+                    <span className="font-mono text-xs text-foreground/40 italic ml-auto">{item.status}</span>
                   )}
                 </div>
 
@@ -57,7 +57,7 @@ export default function Research() {
                     : item.title}
                 </h3>
 
-                <p className="text-sm font-sans font-light text-foreground/30 leading-relaxed">{item.venue}</p>
+                <p className="text-sm font-sans font-light text-foreground/50 leading-relaxed">{item.venue}</p>
 
                 {item.href && (
                   <a href={item.href} target="_blank" rel="noopener noreferrer"
@@ -71,7 +71,7 @@ export default function Research() {
         </div>
 
         <FadeIn delay={0.2}>
-          <p className="mt-16 text-xs font-mono text-foreground/20 leading-relaxed max-w-md">
+          <p className="mt-16 text-xs font-mono text-foreground/35 leading-relaxed max-w-md">
             Research within the Design Science Research paradigm — human–AI interaction
             and AI-augmented learning systems.
           </p>

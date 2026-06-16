@@ -39,13 +39,13 @@ export default function About() {
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <FadeIn>
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">About</p>
-          <hr className="border-0 border-t border-white/8 mb-16" />
+          <hr className="border-0 border-t border-white/12 mb-16" />
         </FadeIn>
 
         {/* Intro */}
         <div className="space-y-6 max-w-xl mb-16">
           <FadeIn delay={0.05}>
-            <p className="text-lg font-sans font-light leading-relaxed text-foreground/65">
+            <p className="text-lg font-sans font-light leading-relaxed text-foreground/80">
               I&rsquo;m Asliddin — a Computer Science and Information Systems student at
               Otto-Friedrich-Universität Bamberg. Alongside my studies I work as a
               freelance web developer, building production sites for German-speaking
@@ -53,7 +53,7 @@ export default function About() {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="text-lg font-sans font-light leading-relaxed text-foreground/65">
+            <p className="text-lg font-sans font-light leading-relaxed text-foreground/80">
               My bachelor thesis — an AI-based adaptive learning assistant — draws on
               Design Science Research and human-AI interaction theory, supervised by{" "}
               <span className="text-accent font-normal">Prof.&nbsp;Dr.&nbsp;Milad Mirbabaie</span>,
@@ -62,7 +62,7 @@ export default function About() {
           </FadeIn>
         </div>
 
-        <hr className="border-0 border-t border-white/8 mb-16" />
+        <hr className="border-0 border-t border-white/12 mb-16" />
 
         <div className="grid md:grid-cols-[1fr_auto] gap-16 md:gap-24">
           <div className="space-y-12">
@@ -70,12 +70,12 @@ export default function About() {
             <FadeIn delay={0.05}>
               <div>
                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/30 mb-5">Background</p>
-                <hr className="border-0 border-t border-white/8 mb-6 w-10" />
+                <hr className="border-0 border-t border-white/12 mb-6 w-10" />
                 <dl className="space-y-3">
                   {PERSONAL.map(({ label, value }) => (
                     <div key={label} className="flex gap-6">
-                      <dt className="font-mono text-xs text-foreground/25 w-24 shrink-0 pt-0.5 tracking-wide">{label}</dt>
-                      <dd className="text-sm font-sans text-foreground/60 leading-relaxed">{value}</dd>
+                      <dt className="font-mono text-xs text-foreground/45 w-24 shrink-0 pt-0.5 tracking-wide">{label}</dt>
+                      <dd className="text-sm font-sans text-foreground/75 leading-relaxed">{value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -85,7 +85,7 @@ export default function About() {
             <FadeIn delay={0.1}>
               <div>
                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/30 mb-5">Interests</p>
-                <hr className="border-0 border-t border-white/8 mb-5 w-10" />
+                <hr className="border-0 border-t border-white/12 mb-5 w-10" />
                 <ul className="flex flex-wrap gap-2" role="list">
                   {INTERESTS.map((item) => (
                     <li key={item}
@@ -100,11 +100,11 @@ export default function About() {
             <FadeIn delay={0.15}>
               <div>
                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/30 mb-5">Hobbies</p>
-                <hr className="border-0 border-t border-white/8 mb-5 w-10" />
+                <hr className="border-0 border-t border-white/12 mb-5 w-10" />
                 <ul className="flex flex-wrap gap-2" role="list">
                   {HOBBIES.map((item) => (
                     <li key={item}
-                      className="text-xs font-sans text-foreground/40 border border-white/8 px-3 py-1.5 hover:border-white/25 hover:text-foreground/65 transition-colors duration-200">
+                      className="text-xs font-sans text-foreground/55 border border-white/12 px-3 py-1.5 hover:border-white/25 hover:text-foreground/65 transition-colors duration-200">
                       {item}
                     </li>
                   ))}
@@ -116,10 +116,10 @@ export default function About() {
           <FadeIn delay={0.1}>
             <div className="md:pt-1">
               <p className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/30 mb-5">Stack</p>
-              <hr className="border-0 border-t border-white/8 mb-5 w-24" />
+              <hr className="border-0 border-t border-white/12 mb-5 w-24" />
               <ul className="space-y-3" role="list">
                 {STACK.map((tech) => (
-                  <li key={tech} className="text-sm font-mono text-foreground/50 tracking-wide hover:text-accent transition-colors duration-200">{tech}</li>
+                  <li key={tech} className="text-sm font-mono text-foreground/65 tracking-wide hover:text-accent transition-colors duration-200">{tech}</li>
                 ))}
               </ul>
             </div>

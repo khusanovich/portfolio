@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #030014;
-  --color-surface:    #08082A;
-  --color-foreground: #E8E8FF;
-  --color-accent:     #00D4FF;
-  --color-secondary:  #A855F7;
+  --color-background: #080C24;
+  --color-surface:    #0D1235;
+  --color-foreground: #EEF0FF;
+  --color-accent:     #22D3EE;
+  --color-secondary:  #A78BFA;
   --color-nebula:     #F472B6;
-  --color-muted:      #6B7280;
+  --color-muted:      #8892B0;
   --font-sans:  var(--font-inter), system-ui, sans-serif;
   --font-serif: var(--font-playfair), Georgia, serif;
   --font-mono:  "Courier New", monospace;
@@ -16,8 +16,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #030014;
-  color: #E8E8FF;
+  background-color: #080C24;
+  color: #EEF0FF;
 }
 
 /* Hide default cursor on pointer devices */
@@ -27,23 +27,23 @@ body {
 
 /* ── Gradient text ─────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #00D4FF 0%, #A855F7 100%);
+  background: linear-gradient(135deg, #22D3EE 0%, #A78BFA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #A855F7 0%, #F472B6 100%);
+  background: linear-gradient(135deg, #A78BFA 0%, #F472B6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* ── Glow ──────────────────────────────────────────── */
-.glow-accent  { box-shadow: 0 0 28px rgba(0,212,255,0.4); }
-.glow-card    { box-shadow: 0 0 60px rgba(0,212,255,0.06), 0 20px 60px rgba(0,0,0,0.5); }
-.glow-text    { text-shadow: 0 0 40px rgba(0,212,255,0.5); }
+.glow-accent  { box-shadow: 0 0 28px rgba(34,211,238,0.45); }
+.glow-card    { box-shadow: 0 0 50px rgba(34,211,238,0.08), 0 16px 48px rgba(0,0,0,0.4); }
+.glow-text    { text-shadow: 0 0 50px rgba(34,211,238,0.45); }
 
 /* ── Gradient border ───────────────────────────────── */
 .gradient-border {
@@ -54,7 +54,7 @@ body {
   position: absolute;
   inset: 0;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(168,85,247,0.2));
+  background: linear-gradient(135deg, rgba(34,211,238,0.35), rgba(167,139,250,0.35));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask:         linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -62,17 +62,17 @@ body {
   pointer-events: none;
 }
 
-/* ── Dot grid background ───────────────────────────── */
+/* ── Dot grid ──────────────────────────────────────── */
 .dot-grid {
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
-/* ── Line grid background ──────────────────────────── */
+/* ── Line grid ─────────────────────────────────────── */
 .line-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -83,15 +83,15 @@ body {
   50%       { opacity: 0; }
 }
 
-/* ── Float bob ─────────────────────────────────────── */
+/* ── Float ─────────────────────────────────────────── */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-12px); }
 }
-.float { animation: float 6s ease-in-out infinite; }
+.float      { animation: float 6s ease-in-out infinite; }
 .float-slow { animation: float 9s ease-in-out infinite; }
 
-/* ── Glitch ────────────────────────────────────────── */
+/* ── Glitch keyframes ──────────────────────────────── */
 @keyframes glitch {
   0%   { clip-path: inset(40% 0 61% 0); transform: translate(-4px, 0); }
   20%  { clip-path: inset(92% 0 1% 0);  transform: translate(4px, 0); }

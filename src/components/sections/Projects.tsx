@@ -83,27 +83,27 @@ function TiltCard({ project, i }: { project: Project; i: number }) {
 
         <motion.article
           style={{ background: glowBg }}
-          className="gradient-border bg-white/3 backdrop-blur-md p-9 flex flex-col h-full group hover:bg-white/5 transition-colors duration-300 glow-card"
+          className="gradient-border bg-white/6 backdrop-blur-md p-9 flex flex-col h-full group hover:bg-white/9 transition-colors duration-300 glow-card"
         >
           <h3 className="font-serif text-2xl font-bold text-foreground mb-4 leading-snug group-hover:gradient-text transition-all duration-300">
             {project.name}
           </h3>
 
           <motion.div
-            className="h-px mb-5 bg-gradient-to-r from-accent/40 to-transparent"
+            className="h-px mb-5 bg-gradient-to-r from-accent/60 to-transparent"
             initial={{ width: "2.5rem" }}
             whileHover={{ width: "5rem" }}
             transition={{ duration: 0.3 }}
           />
 
-          <p className="font-sans text-sm font-light leading-relaxed text-foreground/50 mb-8 flex-1">
+          <p className="font-sans text-sm font-light leading-relaxed text-foreground/70 mb-8 flex-1">
             {project.description}
           </p>
 
           <div className="mt-auto space-y-4">
             <ul className="flex flex-wrap gap-2" role="list">
               {project.stack.map((t) => (
-                <li key={t} className="text-xs font-mono text-accent/50 border border-accent/18 px-2.5 py-1 hover:border-accent/40 hover:text-accent transition-colors duration-200">
+                <li key={t} className="text-xs font-mono text-accent/70 border border-accent/30 px-2.5 py-1 hover:border-accent/60 hover:text-accent transition-colors duration-200">
                   {t}
                 </li>
               ))}

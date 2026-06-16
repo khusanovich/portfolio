@@ -41,7 +41,7 @@ export default function Contact() {
         </div>
 
         <FadeIn delay={0.1}>
-          <p className="text-base font-sans font-light text-foreground/40 leading-relaxed mb-16 max-w-md">
+          <p className="text-base font-sans font-light text-foreground/60 leading-relaxed mb-16 max-w-md">
             Open to freelance work, research collaborations, and interesting
             conversations. My inbox is always open.
           </p>
@@ -51,16 +51,16 @@ export default function Contact() {
         <ul role="list">
           {LINKS.map((link, i) => (
             <FadeIn key={link.label} delay={0.12 + i * 0.07}>
-              <li className="border-t border-white/8 last:border-b last:border-white/8">
+              <li className="border-t border-white/12 last:border-b last:border-white/12">
                 <a
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   className="group flex items-center justify-between py-6 hover:pl-2 transition-all duration-300"
                 >
-                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/22 group-hover:text-accent/60 transition-colors duration-200 w-22">{link.label}</span>
-                  <span className="font-sans text-sm text-foreground/50 group-hover:text-accent transition-colors duration-200 flex-1">{link.display}</span>
-                  <span className="text-foreground/15 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">→</span>
+                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/38 group-hover:text-accent/70 transition-colors duration-200 w-22">{link.label}</span>
+                  <span className="font-sans text-sm text-foreground/70 group-hover:text-accent transition-colors duration-200 flex-1">{link.display}</span>
+                  <span className="text-foreground/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">→</span>
                 </a>
               </li>
             </FadeIn>
@@ -69,9 +69,9 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 mt-32 pt-8 border-t border-white/8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p className="font-mono text-xs text-foreground/15">© {new Date().getFullYear()} Asliddin Ergashev</p>
-        <p className="font-mono text-xs text-foreground/15">asliddin-ergashev.com</p>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 mt-32 pt-8 border-t border-white/12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p className="font-mono text-xs text-foreground/30">© {new Date().getFullYear()} Asliddin Ergashev</p>
+        <p className="font-mono text-xs text-foreground/30">asliddin-ergashev.com</p>
       </div>
     </section>
   );

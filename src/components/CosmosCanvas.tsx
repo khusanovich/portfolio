@@ -27,16 +27,16 @@ function makeLayer(
   return Array.from({ length: count }, () => {
     const t = Math.random();
     const [r, g, b] =
-      t < 0.55 ? [180, 200, 255]  // blue-white
-      : t < 0.75 ? [230, 230, 255] // pure white
-      : t < 0.88 ? [168, 148, 255] // violet
-      : [150, 230, 255];            // cyan
+      t < 0.50 ? [190, 215, 255]  // blue-white
+      : t < 0.72 ? [240, 240, 255] // pure white
+      : t < 0.86 ? [185, 165, 255] // violet
+      : [160, 240, 255];            // cyan
 
     return {
       x: Math.random() * w,
       y: Math.random() * h,
       size: minSize + Math.random() * (maxSize - minSize),
-      opacity: 0.35 + Math.random() * 0.65,
+      opacity: 0.55 + Math.random() * 0.45,
       speed,
       twinkleSpeed: 0.3 + Math.random() * 0.9,
       twinklePhase: Math.random() * Math.PI * 2,
@@ -68,9 +68,9 @@ export default function CosmosCanvas() {
 
     const init = () => {
       stars = [
-        ...makeLayer(200, 0.2, 0.7, 0.08, canvas.width, canvas.height),
-        ...makeLayer(90,  0.7, 1.3, 0.25, canvas.width, canvas.height),
-        ...makeLayer(40,  1.3, 2.5, 0.6,  canvas.width, canvas.height),
+        ...makeLayer(200, 0.3, 0.9,  0.08, canvas.width, canvas.height),
+        ...makeLayer(90,  0.9, 1.6,  0.25, canvas.width, canvas.height),
+        ...makeLayer(40,  1.6, 2.8,  0.6,  canvas.width, canvas.height),
       ];
     };
 

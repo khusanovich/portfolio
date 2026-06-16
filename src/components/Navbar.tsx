@@ -66,7 +66,7 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || menuOpen
-            ? "bg-background/80 backdrop-blur-md border-b border-white/8"
+            ? "bg-background/80 backdrop-blur-md border-b border-white/12"
             : "bg-transparent"
         }`}
       >
@@ -95,7 +95,7 @@ export default function Navbar() {
                     className={`text-sm transition-colors duration-200 ${
                       active
                         ? "text-accent"
-                        : "text-foreground/45 hover:text-foreground"
+                        : "text-foreground/60 hover:text-foreground"
                     }`}
                   >
                     {label}
@@ -149,7 +149,7 @@ export default function Navbar() {
                   onClick={close}
                   className={`block font-serif text-4xl font-bold py-3 transition-all duration-200 ${
                     menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-                  } ${activeId === href.slice(1) ? "gradient-text" : "text-foreground/70 hover:text-accent"}`}
+                  } ${activeId === href.slice(1) ? "gradient-text" : "text-foreground/80 hover:text-accent"}`}
                   style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {label}
@@ -159,7 +159,7 @@ export default function Navbar() {
           </ul>
 
           <div
-            className={`pt-8 border-t border-white/8 transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+            className={`pt-8 border-t border-white/12 transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
             style={{ transitionDelay: menuOpen ? "320ms" : "0ms" }}
           >
             <a
