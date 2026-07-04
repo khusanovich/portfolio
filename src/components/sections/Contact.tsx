@@ -8,70 +8,75 @@ const LINKS = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen flex flex-col justify-center py-32 bg-surface relative overflow-hidden">
-      <div className="line-grid absolute inset-0 pointer-events-none" />
+    <section id="contact" className="min-h-screen flex flex-col justify-center py-24 md:py-32 bg-surface relative">
+      {/* Subtle glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
-      {/* Glow orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-secondary/5 blur-[150px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-6 w-full">
-
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+        {/* Section header */}
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-12">Contact</p>
+          <div className="mb-16">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-4">
+              Get In Touch
+            </p>
+            <div className="w-16 h-px bg-accent/50" />
+          </div>
         </FadeIn>
 
-        {/* Massive heading */}
-        <div className="mb-20">
+        {/* Heading */}
+        <div className="mb-16">
           <FadeIn delay={0.05}>
-            <h2 className="font-serif font-bold leading-[0.88]">
-              <span
-                className="block text-foreground/8"
-                style={{ fontSize: "clamp(72px, 14vw, 200px)", WebkitTextStroke: "1px rgba(232,232,255,0.1)", color: "transparent" }}
-              >
-                LET'S
-              </span>
-              <span
-                className="block gradient-text glow-text"
-                style={{ fontSize: "clamp(72px, 14vw, 200px)" }}
-              >
-                TALK.
-              </span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+              <span className="block text-foreground">Let's build</span>
+              <span className="block gradient-text">something great.</span>
             </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p className="text-lg md:text-xl text-muted/80 leading-relaxed max-w-2xl">
+              Open to freelance work, research collaborations, and interesting
+              conversations. My inbox is always open.
+            </p>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.1}>
-          <p className="text-base font-sans font-light text-foreground/60 leading-relaxed mb-16 max-w-md">
-            Open to freelance work, research collaborations, and interesting
-            conversations. My inbox is always open.
-          </p>
-        </FadeIn>
-
         {/* Links */}
-        <ul role="list">
+        <div className="max-w-2xl">
           {LINKS.map((link, i) => (
             <FadeIn key={link.label} delay={0.12 + i * 0.07}>
-              <li className="border-t border-white/12 last:border-b last:border-white/12">
+              <div className="border-t border-muted/20 last:border-b last:border-muted/20">
                 <a
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-                  className="group flex items-center justify-between py-6 hover:pl-2 transition-all duration-300"
+                  className="group flex items-center justify-between py-6 hover:pl-4 transition-all duration-300"
                 >
-                  <span className="font-mono text-xs tracking-[0.2em] uppercase text-foreground/38 group-hover:text-accent/70 transition-colors duration-200 w-22">{link.label}</span>
-                  <span className="font-sans text-sm text-foreground/70 group-hover:text-accent transition-colors duration-200 flex-1">{link.display}</span>
-                  <span className="text-foreground/30 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">→</span>
+                  <span className="font-mono text-xs tracking-wider uppercase text-muted/60 w-24">
+                    {link.label}
+                  </span>
+                  <span className="text-base text-foreground/80 group-hover:text-accent transition-colors duration-200 flex-1">
+                    {link.display}
+                  </span>
+                  <span className="text-muted/40 group-hover:text-accent group-hover:translate-x-2 transition-all duration-200">
+                    →
+                  </span>
                 </a>
-              </li>
+              </div>
             </FadeIn>
           ))}
-        </ul>
+        </div>
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 mt-32 pt-8 border-t border-white/12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p className="font-mono text-xs text-foreground/30">© {new Date().getFullYear()} Asliddin Ergashev</p>
-        <p className="font-mono text-xs text-foreground/30">asliddin-ergashev.com</p>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mt-24 pt-8 border-t border-muted/20">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="font-mono text-xs text-muted/60">
+            © {new Date().getFullYear()} Asliddin Ergashev
+          </p>
+          <p className="font-mono text-xs text-muted/60">
+            asliddin-ergashev.com
+          </p>
+        </div>
       </div>
     </section>
   );
