@@ -19,11 +19,6 @@ body {
   color: #f0f0f0;
 }
 
-/* Hide default cursor on pointer devices */
-@media (pointer: fine) {
-  *, html { cursor: none !important; }
-}
-
 /* ── Gradient text ─────────────────────────────────── */
 .gradient-text {
   background: linear-gradient(135deg, #E60000 0%, #f0f0f0 100%);
