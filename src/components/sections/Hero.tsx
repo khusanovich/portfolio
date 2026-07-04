@@ -90,17 +90,17 @@ export default function Hero() {
                   src="/foto.png"
                   alt="Asliddin Ergashev"
                   fill
-                  className="object-cover object-top grayscale brightness-75 contrast-125 group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-500"
+                  className="object-cover object-top grayscale brightness-90 contrast-110 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500 scale-125"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectPosition: '50% 20%' }}
+                  style={{ objectPosition: '50% 15%' }}
                 />
-                {/* Smooth radial gradient to blend edges with background */}
+                {/* Vignette effect - lighter at center to highlight face */}
                 <div className="absolute inset-0 rounded-full" style={{
-                  background: 'radial-gradient(circle, transparent 0%, transparent 40%, rgba(14, 14, 14, 0.3) 60%, rgba(14, 14, 14, 0.7) 80%, rgba(14, 14, 14, 1) 100%)'
+                  background: 'radial-gradient(circle at 50% 35%, transparent 0%, transparent 35%, rgba(14, 14, 14, 0.2) 50%, rgba(14, 14, 14, 0.6) 75%, rgba(14, 14, 14, 1) 100%)'
                 }} />
                 {/* Bottom fade for seamless blend */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent rounded-full" />
+                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent rounded-full" />
                 {/* Subtle accent overlay on hover */}
                 <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               </div>
