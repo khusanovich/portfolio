@@ -24,44 +24,57 @@ const RESEARCH: ResearchItem[] = [
 
 export default function Research() {
   return (
-    <section id="research" className="py-32 bg-background relative overflow-hidden">
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+    <section id="research" className="py-24 md:py-32 bg-surface relative">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section header */}
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">Research</p>
-          <hr className="border-0 border-t border-white/12 mb-16" />
+          <div className="mb-16">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-4">
+              Academic Research
+            </p>
+            <div className="w-16 h-px bg-accent/50" />
+          </div>
         </FadeIn>
 
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           {RESEARCH.map((item, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <article className="relative py-12 first:pt-0 border-b border-white/12 last:border-b-0 group">
-                {/* Large year in background */}
-                <span
-                  className="absolute right-0 top-1/2 -translate-y-1/2 font-serif font-bold text-foreground/[0.03] select-none pointer-events-none leading-none"
-                  style={{ fontSize: "clamp(60px, 8vw, 110px)" }}
-                  aria-hidden="true"
-                >
-                  {item.year}
-                </span>
-
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="font-mono text-xs tracking-[0.15em] uppercase text-accent/80">{item.type}</span>
+              <article className="pb-12 mb-12 border-b border-muted/20 last:border-b-0 group">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="font-mono text-xs tracking-wider uppercase text-accent">
+                    {item.type}
+                  </span>
+                  <span className="text-sm text-muted/60">·</span>
+                  <span className="font-semibold text-sm text-muted/80">
+                    {item.year}
+                  </span>
                   {item.status && (
-                    <span className="font-mono text-xs text-foreground/40 italic ml-auto">{item.status}</span>
+                    <>
+                      <span className="text-sm text-muted/60">·</span>
+                      <span className="text-xs text-muted/70 italic">
+                        {item.status}
+                      </span>
+                    </>
                   )}
                 </div>
 
-                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground leading-snug mb-4 group-hover:gradient-text transition-all duration-400">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-4 group-hover:text-accent transition-colors duration-300">
                   {item.href
                     ? <a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
                     : item.title}
                 </h3>
 
-                <p className="text-sm font-sans font-light text-foreground/50 leading-relaxed">{item.venue}</p>
+                <p className="text-base text-muted/80 leading-relaxed">
+                  {item.venue}
+                </p>
 
                 {item.href && (
-                  <a href={item.href} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-accent hover:text-foreground transition-colors duration-200">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-accent hover:text-accent/80 transition-colors duration-200"
+                  >
                     Read paper →
                   </a>
                 )}
@@ -71,7 +84,7 @@ export default function Research() {
         </div>
 
         <FadeIn delay={0.2}>
-          <p className="mt-16 text-xs font-mono text-foreground/35 leading-relaxed max-w-md">
+          <p className="mt-12 text-sm text-muted/70 leading-relaxed max-w-2xl">
             Research within the Design Science Research paradigm — human–AI interaction
             and AI-augmented learning systems.
           </p>
