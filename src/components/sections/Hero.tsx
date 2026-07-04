@@ -83,19 +83,24 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="relative lg:order-last order-first"
           >
-            <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
+            <div className="relative aspect-[3/4] max-w-md mx-auto lg:max-w-none">
               {/* Photo container with border */}
-              <div className="relative w-full h-full border border-muted/20 overflow-hidden group">
+              <div className="relative w-full h-full border border-muted/20 overflow-hidden group bg-background">
                 <Image
-                  src="/84868316.png"
+                  src="/foto.png"
                   alt="Asliddin Ergashev"
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="object-cover object-top grayscale brightness-75 contrast-125 group-hover:grayscale-0 group-hover:brightness-90 transition-all duration-500"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectPosition: '50% 20%' }}
                 />
-                {/* Overlay gradient on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Dark overlay to blend with background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/90" />
+                {/* Bottom fade to blend with background */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                {/* Subtle accent overlay on hover */}
+                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Decorative accent border */}
