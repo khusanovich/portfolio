@@ -16,16 +16,16 @@ function VideoCard({ entry, index }: { entry: VideoEntry; index: number }) {
   const href = entry.youtubeId ? `https://www.youtube.com/watch?v=${entry.youtubeId}` : undefined;
 
   const card = (
-    <article className="gradient-border bg-white/6 backdrop-blur-sm flex flex-col group hover:bg-white/8 transition-colors duration-300">
-      <div className="relative w-full aspect-video bg-white/7 overflow-hidden">
+    <article className="bg-surface border border-muted/20 flex flex-col group hover:border-accent/30 transition-all duration-300">
+      <div className="relative w-full aspect-video bg-background/50 overflow-hidden">
         {entry.youtubeId ? (
           <>
             <Image src={`https://img.youtube.com/vi/${entry.youtubeId}/hqdefault.jpg`}
               alt={entry.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width:768px) 100vw, 50vw" />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/50">
-              <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center glow-accent">
-                <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" className="text-background ml-1" aria-hidden="true">
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/60">
+              <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" className="text-background ml-1" aria-hidden="true">
                   <path d="M3 2.5l10 5.5-10 5.5V2.5z" />
                 </svg>
               </div>
@@ -33,24 +33,25 @@ function VideoCard({ entry, index }: { entry: VideoEntry; index: number }) {
           </>
         ) : (
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-full border border-accent/40 flex items-center justify-center float">
-              <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" className="text-accent/55 ml-1" aria-hidden="true">
+            <div className="w-16 h-16 rounded-full border-2 border-muted/30 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" className="text-muted/50 ml-1" aria-hidden="true">
                 <path d="M3 2.5l10 5.5-10 5.5V2.5z" />
               </svg>
             </div>
           </div>
         )}
       </div>
-      <div className="p-7 flex flex-col flex-1">
+      <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-3">
-          <span className="font-mono text-xs text-foreground/40">{entry.date}</span>
-          <span className="font-mono text-xs text-accent/75 border border-accent/35 px-2 py-0.5">{entry.tag}</span>
+          <span className="font-mono text-xs text-muted/60">{entry.date}</span>
+          <span className="text-muted/40">·</span>
+          <span className="text-xs font-medium text-accent/80 uppercase tracking-wider">{entry.tag}</span>
         </div>
-        <h3 className="font-serif text-xl font-bold text-foreground leading-snug mb-2 group-hover:gradient-text transition-all duration-300">{entry.title}</h3>
-        <p className="text-sm font-sans font-light text-foreground/60 leading-relaxed mb-4 flex-1">{entry.description}</p>
+        <h3 className="text-xl font-bold text-foreground leading-tight mb-2 group-hover:text-accent transition-colors duration-300">{entry.title}</h3>
+        <p className="text-sm text-muted/80 leading-relaxed mb-4 flex-1">{entry.description}</p>
         {href
-          ? <span className="inline-flex items-center gap-1.5 text-xs font-mono text-accent">Watch on YouTube →</span>
-          : <span className="text-xs font-mono text-foreground/35 italic">Coming soon</span>}
+          ? <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent">Watch on YouTube →</span>
+          : <span className="text-sm text-muted/50 italic">Coming soon</span>}
       </div>
     </article>
   );
@@ -64,16 +65,22 @@ function VideoCard({ entry, index }: { entry: VideoEntry; index: number }) {
 
 export default function Vlog() {
   return (
-    <section id="vlog" className="py-32 bg-background">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="vlog" className="py-24 md:py-32 bg-surface">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section header */}
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">Vlog</p>
-          <hr className="border-0 border-t border-white/12 mb-4" />
-          <p className="text-sm font-sans font-light text-foreground/50 mb-16">
-            Videos from events, conferences, and moments worth sharing.
-          </p>
+          <div className="mb-16">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-4">
+              Video
+            </p>
+            <div className="w-16 h-px bg-accent/50" />
+            <p className="text-sm text-muted/70 mt-6">
+              Videos from events, conferences, and moments worth sharing.
+            </p>
+          </div>
         </FadeIn>
-        <div className="grid sm:grid-cols-2 gap-6">
+
+        <div className="grid sm:grid-cols-2 gap-8">
           {VIDEOS.map((e, i) => <VideoCard key={i} entry={e} index={i} />)}
         </div>
       </div>
