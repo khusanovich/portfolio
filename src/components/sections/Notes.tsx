@@ -19,32 +19,46 @@ const NOTES: Note[] = [
 
 export default function Notes() {
   return (
-    <section id="notes" className="py-32 bg-surface relative overflow-hidden">
-      <div className="dot-grid absolute inset-0 opacity-40 pointer-events-none" />
-      <div className="relative z-10 max-w-5xl mx-auto px-6">
+    <section id="notes" className="py-24 md:py-32 bg-background relative">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section header */}
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.3em] uppercase text-accent mb-6">Notes</p>
-          <hr className="border-0 border-t border-white/12 mb-4" />
-          <p className="text-sm font-sans font-light text-foreground/50 mb-16">
-            Short write-ups on things I&rsquo;ve learned.
-          </p>
+          <div className="mb-16">
+            <p className="font-mono text-xs tracking-widest uppercase text-muted mb-4">
+              Writing
+            </p>
+            <div className="w-16 h-px bg-accent/50" />
+            <p className="text-sm text-muted/70 mt-6">
+              Short write-ups on things I've learned.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="max-w-2xl">
+        <div className="max-w-3xl space-y-8">
           {NOTES.map((note, i) => (
             <FadeIn key={i} delay={i * 0.08}>
-              <article className="py-9 first:pt-0 border-b border-white/12 last:border-b-0 group">
+              <article className="group pb-8 border-b border-muted/20 last:border-b-0">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="font-mono text-xs text-foreground/40">{note.date}</span>
-                  <span className="font-mono text-xs text-accent/75 border border-accent/35 px-2 py-0.5">{note.tag}</span>
+                  <span className="font-mono text-xs text-muted/60">{note.date}</span>
+                  <span className="text-muted/40">·</span>
+                  <span className="text-xs font-medium text-accent/80 uppercase tracking-wider">
+                    {note.tag}
+                  </span>
                 </div>
-                <h3 className="font-serif text-xl font-bold text-foreground leading-snug mb-3 group-hover:gradient-text transition-all duration-300">
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight mb-3 group-hover:text-accent transition-colors duration-300">
                   {note.href ? <a href={note.href}>{note.title}</a> : note.title}
                 </h3>
-                <p className="text-sm font-sans font-light text-foreground/60 leading-relaxed mb-4">{note.excerpt}</p>
+
+                <p className="text-base text-muted/80 leading-relaxed mb-4">
+                  {note.excerpt}
+                </p>
+
                 {note.href
-                  ? <a href={note.href} className="inline-flex items-center gap-1.5 text-xs font-mono text-accent">Read →</a>
-                  : <span className="text-xs font-mono text-foreground/35 italic">Coming soon</span>}
+                  ? <a href={note.href} className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors duration-200">
+                      Read more →
+                    </a>
+                  : <span className="text-sm text-muted/50 italic">Coming soon</span>}
               </article>
             </FadeIn>
           ))}
