@@ -20,7 +20,7 @@ export default function Navbar() {
   const [activeId, setActiveId]   = useState("");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -66,25 +66,25 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || menuOpen
-            ? "bg-background/80 backdrop-blur-md border-b border-white/12"
+            ? "bg-background/90 backdrop-blur-md border-b border-muted/20"
             : "bg-transparent"
         }`}
       >
         <nav
-          className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+          className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between"
           aria-label="Primary navigation"
         >
           <Link
             href="#hero"
             onClick={close}
-            className="font-serif text-2xl font-bold tracking-tight gradient-text"
+            className="font-sans text-xl font-bold tracking-tight text-foreground hover:text-accent transition-colors duration-200"
             aria-label="Go to top"
           >
-            A.
+            AE
           </Link>
 
           {/* Desktop */}
-          <ul className="hidden md:flex items-center gap-7" role="list">
+          <ul className="hidden md:flex items-center gap-8" role="list">
             {NAV_LINKS.map(({ label, href }) => {
               const id = href.slice(1);
               const active = activeId === id;
@@ -92,10 +92,10 @@ export default function Navbar() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`text-sm transition-colors duration-200 ${
+                    className={`text-sm font-medium transition-colors duration-200 ${
                       active
                         ? "text-accent"
-                        : "text-foreground/60 hover:text-foreground"
+                        : "text-foreground/70 hover:text-foreground"
                     }`}
                   >
                     {label}
@@ -107,25 +107,25 @@ export default function Navbar() {
               <a
                 href="/cv.pdf"
                 download
-                className="text-sm px-4 py-2 border border-accent/50 text-accent hover:bg-accent hover:text-background transition-all duration-200 glow-accent"
+                className="text-sm font-semibold px-5 py-2.5 bg-accent text-background hover:bg-accent/90 transition-all duration-200"
                 aria-label="Download CV"
               >
-                CV ↓
+                Download CV
               </a>
             </li>
           </ul>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
-            <span className={`block h-px w-5 bg-foreground transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-            <span className={`block h-px w-5 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block h-px w-5 bg-foreground transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block h-0.5 w-6 bg-foreground transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </button>
         </nav>
       </header>
@@ -136,20 +136,20 @@ export default function Navbar() {
         role="dialog"
         aria-label="Navigation menu"
         aria-modal="true"
-        className={`fixed inset-0 z-40 flex flex-col bg-background/95 backdrop-blur-xl pt-16 transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col bg-background/95 backdrop-blur-xl pt-20 transition-all duration-300 md:hidden ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
         <nav className="flex flex-col px-6 pt-12 pb-10 flex-1">
-          <ul className="space-y-1 flex-1" role="list">
+          <ul className="space-y-2 flex-1" role="list">
             {NAV_LINKS.map(({ label, href }, i) => (
               <li key={href}>
                 <Link
                   href={href}
                   onClick={close}
-                  className={`block font-serif text-4xl font-bold py-3 transition-all duration-200 ${
+                  className={`block font-sans text-3xl font-bold py-3 transition-all duration-200 ${
                     menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-                  } ${activeId === href.slice(1) ? "gradient-text" : "text-foreground/80 hover:text-accent"}`}
+                  } ${activeId === href.slice(1) ? "text-accent" : "text-foreground hover:text-accent"}`}
                   style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
                 >
                   {label}
@@ -159,16 +159,16 @@ export default function Navbar() {
           </ul>
 
           <div
-            className={`pt-8 border-t border-white/12 transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+            className={`pt-8 border-t border-muted/20 transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
             style={{ transitionDelay: menuOpen ? "320ms" : "0ms" }}
           >
             <a
               href="/cv.pdf"
               download
               onClick={close}
-              className="inline-flex items-center gap-2 text-sm font-sans px-5 py-3 border border-accent/50 text-accent hover:bg-accent hover:text-background transition-all duration-200"
+              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 bg-accent text-background hover:bg-accent/90 transition-all duration-200"
             >
-              Download CV ↓
+              Download CV
             </a>
           </div>
         </nav>
