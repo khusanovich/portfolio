@@ -83,9 +83,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="relative lg:order-last order-first"
           >
-            <div className="relative aspect-[3/4] max-w-md mx-auto lg:max-w-none">
+            <div className="relative aspect-square max-w-md mx-auto lg:max-w-lg">
               {/* Photo container with border */}
-              <div className="relative w-full h-full border border-muted/20 overflow-hidden group bg-background">
+              <div className="relative w-full h-full border border-muted/20 rounded-full overflow-hidden group bg-background">
                 <Image
                   src="/foto.png"
                   alt="Asliddin Ergashev"
@@ -96,15 +96,15 @@ export default function Hero() {
                   style={{ objectPosition: '50% 20%' }}
                 />
                 {/* Dark overlay to blend with background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/90" />
+                <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/90 rounded-full" />
                 {/* Bottom fade to blend with background */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background via-background/60 to-transparent rounded-full" />
                 {/* Subtle accent overlay on hover */}
-                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               </div>
 
               {/* Decorative accent border */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-accent/30 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-accent/30 rounded-full -z-10" />
             </div>
           </motion.div>
         </div>
