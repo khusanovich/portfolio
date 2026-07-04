@@ -84,8 +84,8 @@ export default function Hero() {
             className="relative lg:order-last order-first"
           >
             <div className="relative aspect-square max-w-md mx-auto lg:max-w-lg">
-              {/* Photo container with border */}
-              <div className="relative w-full h-full border border-muted/20 rounded-full overflow-hidden group bg-background">
+              {/* Photo container */}
+              <div className="relative w-full h-full rounded-full overflow-hidden group">
                 <Image
                   src="/foto.png"
                   alt="Asliddin Ergashev"
@@ -95,16 +95,15 @@ export default function Hero() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectPosition: '50% 20%' }}
                 />
-                {/* Dark overlay to blend with background */}
-                <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/90 rounded-full" />
-                {/* Bottom fade to blend with background */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-background via-background/60 to-transparent rounded-full" />
+                {/* Smooth radial gradient to blend edges with background */}
+                <div className="absolute inset-0 rounded-full" style={{
+                  background: 'radial-gradient(circle, transparent 0%, transparent 40%, rgba(14, 14, 14, 0.3) 60%, rgba(14, 14, 14, 0.7) 80%, rgba(14, 14, 14, 1) 100%)'
+                }} />
+                {/* Bottom fade for seamless blend */}
+                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/70 to-transparent rounded-full" />
                 {/* Subtle accent overlay on hover */}
                 <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               </div>
-
-              {/* Decorative accent border */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-accent/30 rounded-full -z-10" />
             </div>
           </motion.div>
         </div>
