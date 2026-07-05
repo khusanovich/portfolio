@@ -4,7 +4,7 @@
   --color-background: #0e0e0e;
   --color-surface:    #1a1a1a;
   --color-foreground: #f0f0f0;
-  --color-accent:     #EF4444;
+  --color-accent:     #E60000;
   --color-secondary:  #FDB602;
   --color-muted:      #6b6b6b;
   --font-sans:  var(--font-dm-sans), system-ui, sans-serif;
@@ -21,23 +21,23 @@ body {
 
 /* ── Gradient text ─────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #EF4444 0%, #f0f0f0 100%);
+  background: linear-gradient(135deg, #E60000 0%, #f0f0f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-warm {
-  background: linear-gradient(135deg, #EF4444 0%, #FDB602 100%);
+  background: linear-gradient(135deg, #E60000 0%, #FDB602 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* ── Glow ──────────────────────────────────────────── */
-.glow-accent  { box-shadow: 0 0 28px rgba(239,68,68,0.25); }
-.glow-card    { box-shadow: 0 0 50px rgba(239,68,68,0.06), 0 16px 48px rgba(0,0,0,0.5); }
-.glow-text    { text-shadow: 0 0 50px rgba(239,68,68,0.25); }
+.glow-accent  { box-shadow: 0 0 28px rgba(230,0,0,0.25); }
+.glow-card    { box-shadow: 0 0 50px rgba(230,0,0,0.06), 0 16px 48px rgba(0,0,0,0.5); }
+.glow-text    { text-shadow: 0 0 50px rgba(230,0,0,0.25); }
 
 /* ── Gradient border ───────────────────────────────── */
 .gradient-border {
@@ -48,7 +48,7 @@ body {
   position: absolute;
   inset: 0;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(239,68,68,0.3), rgba(253,182,2,0.2));
+  background: linear-gradient(135deg, rgba(230,0,0,0.3), rgba(253,182,2,0.2));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask:         linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
