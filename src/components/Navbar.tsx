@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const NAV_LINKS = [
   { label: "About",    href: "#about" },
@@ -14,10 +14,18 @@ const NAV_LINKS = [
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
 
+const DOCUMENTS = [
+  { label: "Resume (EN)", file: "/Asliddin_Ergashev_Resume.pdf" },
+  { label: "Letter of Recommendation (EN)", file: "/Letter_of_Recommendation_Asliddin_Ergashev.pdf" },
+  { label: "Empfehlungsschreiben (DE)", file: "/Empfehlungsschreiben_Asliddin_Ergashev.pdf" },
+];
+
 export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [activeId, setActiveId]   = useState("");
+  const [docsOpen, setDocsOpen]   = useState(false);
+  const docsRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -54,9 +62,25 @@ export default function Navbar() {
   }, [menuOpen]);
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMenuOpen(false); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        setDocsOpen(false);
+      }
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (docsRef.current && !docsRef.current.contains(e.target as Node)) {
+        setDocsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const close = () => setMenuOpen(false);
@@ -103,15 +127,33 @@ export default function Navbar() {
                 </li>
               );
             })}
-            <li>
-              <a
-                href="/cv.pdf"
-                download
-                className="text-sm font-semibold px-5 py-2.5 bg-accent text-background hover:bg-accent/90 transition-all duration-200"
-                aria-label="Download CV"
+            <li className="relative" ref={docsRef}>
+              <button
+                onClick={() => setDocsOpen(!docsOpen)}
+                className="text-sm font-semibold px-5 py-2.5 rounded-lg border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-200 flex items-center gap-2"
+                aria-label="Download Documents"
+                aria-expanded={docsOpen}
               >
-                Download CV
-              </a>
+                Documents
+                <span className={`transition-transform duration-200 ${docsOpen ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+
+              {/* Dropdown */}
+              {docsOpen && (
+                <div className="absolute right-0 top-full mt-2 w-72 bg-surface border border-muted/30 rounded-lg shadow-lg overflow-hidden z-50">
+                  {DOCUMENTS.map((doc, i) => (
+                    <a
+                      key={i}
+                      href={doc.file}
+                      download
+                      onClick={() => setDocsOpen(false)}
+                      className="block px-4 py-3 text-sm text-foreground hover:bg-accent/10 hover:text-accent transition-colors duration-200 border-b border-muted/20 last:border-b-0"
+                    >
+                      {doc.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </li>
           </ul>
 
@@ -162,14 +204,20 @@ export default function Navbar() {
             className={`pt-8 border-t border-muted/20 transition-all duration-300 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
             style={{ transitionDelay: menuOpen ? "320ms" : "0ms" }}
           >
-            <a
-              href="/cv.pdf"
-              download
-              onClick={close}
-              className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 bg-accent text-background hover:bg-accent/90 transition-all duration-200"
-            >
-              Download CV
-            </a>
+            <p className="text-xs font-mono tracking-wider uppercase text-muted mb-4">Documents</p>
+            <div className="space-y-2">
+              {DOCUMENTS.map((doc, i) => (
+                <a
+                  key={i}
+                  href={doc.file}
+                  download
+                  onClick={close}
+                  className="block px-4 py-3 rounded-lg border-2 border-muted/30 text-sm font-medium text-foreground hover:border-accent hover:text-accent transition-all duration-200"
+                >
+                  {doc.label}
+                </a>
+              ))}
+            </div>
           </div>
         </nav>
       </div>
