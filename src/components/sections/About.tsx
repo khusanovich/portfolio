@@ -1,19 +1,19 @@
 import FadeIn from "@/components/FadeIn";
 
 const METRICS = [
-  { number: "3+", label: "Years Experience" },
-  { number: "10+", label: "Projects Completed" },
-  { number: "5", label: "Technologies Mastered" },
+  { number: "4+", label: "Years in AI/ML" },
+  { number: "15+", label: "Production Projects" },
+  { number: "3", label: "Major Companies" },
 ];
 
-const STACK = ["Next.js", "TypeScript", "React", "FastAPI", "PostgreSQL", "Unity (C#)"];
+const STACK = ["LangChain", "Azure OpenAI", "GPT-4/GPT-5", "RAG Systems", "FastAPI", "React/Next.js", "TypeScript", "Docker"];
 
 const INTERESTS = [
-  "Artificial Intelligence",
-  "Human–Computer Interaction",
-  "Game Development",
-  "Design Science Research",
-  "Web Architecture",
+  "LLM-Powered Document Intelligence",
+  "Retrieval Augmented Generation (RAG)",
+  "AI Agents & Agentic Systems",
+  "Prompt Engineering & Evaluation",
+  "Human-AI Interaction Research",
 ];
 
 export default function About() {
@@ -51,13 +51,10 @@ export default function About() {
           <FadeIn delay={0.15}>
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-                Student & Freelance<br />Web Developer
+                Full Stack AI Engineer<br />& Integration Specialist
               </h2>
               <p className="text-lg text-muted/90 leading-relaxed">
-                I'm Asliddin — a Computer Science and Information Systems student at
-                Otto-Friedrich-Universität Bamberg. Alongside my studies I work as a
-                freelance web developer, building production sites for German-speaking
-                clients.
+                I'm Asliddin — a Full Stack AI Engineer specializing in bringing LLM-powered solutions into production. Currently at <span className="text-accent font-semibold">Trench Group</span>, I develop AI systems that transform how technical sales teams work with complex documents.
               </p>
             </div>
           </FadeIn>
@@ -65,13 +62,10 @@ export default function About() {
           <FadeIn delay={0.2}>
             <div className="space-y-6">
               <p className="text-lg text-muted/90 leading-relaxed">
-                My bachelor thesis — an AI-based adaptive learning assistant — draws on
-                Design Science Research and human-AI interaction theory, supervised by{" "}
-                <span className="text-accent font-semibold">Prof. Dr. Milad Mirbabaie</span>,
-                Chair of AI Engineering in Companies.
+                My work on <span className="text-accent font-semibold">Project NOVA's Spark</span> — an LLM-powered document intelligence platform — extracts, structures, and compares customer specifications using GPT-4/5, RAG systems, and advanced prompt engineering. I've processed 100-500 page documents across heterogeneous formats (PDF, Word, PowerPoint, Excel, images).
               </p>
               <p className="text-lg text-muted/90 leading-relaxed">
-                I focus on clarity, performance, and lasting code across all my projects.
+                Previously at <span className="text-accent font-semibold">Siemens Healthineers</span> and <span className="text-accent font-semibold">Brose Group</span>, I automated technical workflows, built DevOps pipelines, and developed production systems with FastAPI, React, and PostgreSQL.
               </p>
             </div>
           </FadeIn>

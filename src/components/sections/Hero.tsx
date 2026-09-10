@@ -8,10 +8,62 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-background"
+      className="relative min-h-screen flex items-center bg-background overflow-hidden"
     >
-      {/* Subtle background glow */}
-      <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full bg-accent/3 blur-[120px] pointer-events-none" />
+      {/* Multiple background glows for more light */}
+      <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[40%] right-[15%] w-[400px] h-[400px] rounded-full bg-secondary/4 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[30%] w-[350px] h-[350px] rounded-full bg-accent/3 blur-[90px] pointer-events-none" />
+
+      {/* Animated flash lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Diagonal line 1 */}
+        <motion.div
+          className="absolute top-[10%] -left-[50%] w-[150%] h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"
+          style={{ transform: 'rotate(-15deg)' }}
+          animate={{
+            opacity: [0, 1, 0],
+            x: ['-100%', '100%'],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatDelay: 0.5,
+            ease: "easeInOut"
+          }}
+        />
+        {/* Diagonal line 2 */}
+        <motion.div
+          className="absolute top-[60%] -left-[50%] w-[150%] h-[1px] bg-gradient-to-r from-transparent via-secondary/25 to-transparent"
+          style={{ transform: 'rotate(12deg)' }}
+          animate={{
+            opacity: [0, 1, 0],
+            x: ['100%', '-100%'],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatDelay: 0.5,
+            ease: "easeInOut",
+            delay: 0.7
+          }}
+        />
+        {/* Vertical flash line */}
+        <motion.div
+          className="absolute left-[25%] -top-[50%] w-[1px] h-[200%] bg-gradient-to-b from-transparent via-accent/20 to-transparent"
+          animate={{
+            opacity: [0, 0.8, 0],
+            y: ['-50%', '50%'],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatDelay: 0.5,
+            ease: "easeInOut",
+            delay: 1.4
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full py-32">
@@ -40,11 +92,10 @@ export default function Hero() {
             {/* Subtitle */}
             <div className="max-w-xl mb-12">
               <p className="text-xl md:text-2xl text-muted font-light leading-relaxed">
-                Student & Freelance Web Developer
+                Full Stack AI Engineer | AI Integration Specialist
               </p>
               <p className="text-base text-muted/70 mt-4 leading-relaxed">
-                CS/IS student at University of Bamberg building at the intersection
-                of academic research and technical craft.
+                Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.
               </p>
             </div>
 
@@ -52,7 +103,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
               <Link
                 href="#projects"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-background font-sans text-sm font-semibold tracking-wide hover:bg-accent/90 transition-all duration-200"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-accent text-accent font-sans text-sm font-semibold tracking-wide hover:bg-accent hover:text-background transition-all duration-200"
               >
                 View Projects
                 <span className="group-hover:translate-x-1 transition-transform duration-200">
@@ -61,7 +112,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 border border-muted/30 text-foreground font-sans text-sm font-medium tracking-wide hover:border-accent/50 hover:text-accent transition-all duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-muted/30 text-foreground font-sans text-sm font-medium tracking-wide hover:border-accent hover:text-accent transition-all duration-200"
               >
                 Get in Touch
               </Link>
@@ -84,8 +135,12 @@ export default function Hero() {
             className="relative lg:order-last order-first"
           >
             <div className="relative aspect-square max-w-md mx-auto lg:max-w-lg">
+              {/* Glow effect behind photo */}
+              <div className="absolute inset-0 opacity-30 blur-[80px]" style={{
+                background: 'radial-gradient(ellipse 50% 50% at 50% 40%, rgba(230, 0, 0, 0.15), transparent 70%)'
+              }} />
               {/* Photo container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden group">
+              <div className="relative w-full h-full group">
                 <Image
                   src="/foto.png"
                   alt="Asliddin Ergashev"
@@ -93,16 +148,13 @@ export default function Hero() {
                   className="object-cover object-top grayscale brightness-90 contrast-110 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500 scale-125"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  style={{ objectPosition: '50% 15%' }}
+                  style={{
+                    objectPosition: '50% 15%',
+                    opacity: 0.8,
+                    maskImage: 'radial-gradient(ellipse 65% 60% at 50% 40%, black 20%, transparent 70%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 65% 60% at 50% 40%, black 20%, transparent 70%)'
+                  }}
                 />
-                {/* Vignette effect - lighter at center to highlight face */}
-                <div className="absolute inset-0 rounded-full" style={{
-                  background: 'radial-gradient(circle at 50% 35%, transparent 0%, transparent 35%, rgba(14, 14, 14, 0.2) 50%, rgba(14, 14, 14, 0.6) 75%, rgba(14, 14, 14, 1) 100%)'
-                }} />
-                {/* Bottom fade for seamless blend */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent rounded-full" />
-                {/* Subtle accent overlay on hover */}
-                <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
               </div>
             </div>
           </motion.div>
