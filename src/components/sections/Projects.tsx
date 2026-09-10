@@ -12,26 +12,67 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     index: "01",
-    name: "AI Learning Assistant",
+    name: "MeinHelfer",
     description:
-      "An adaptive learning system that personalises study content in real-time using large language models. Built as my bachelor thesis under Design Science Research methodology.",
-    stack: ["Next.js", "FastAPI", "PostgreSQL", "TypeScript", "OpenAI API"],
-    status: "In progress — bachelor thesis",
+      "Full-stack managed marketplace for booking trusted service providers (moving, cleaning, gardening). Features async FastAPI backend with JWT authentication, PostgreSQL database, and Dockerized production deployment.",
+    stack: ["Next.js 15", "TypeScript", "Tailwind CSS", "FastAPI", "PostgreSQL", "Docker"],
+    href: "https://github.com/khusanovich/MeinHelfer",
   },
   {
     index: "02",
-    name: "Viatolea",
+    name: "Gut Guardian",
     description:
-      "A gamified mobile app helping users identify and manage food intolerances through structured challenges, progress tracking, and habit loops.",
-    stack: ["Unity", "C#", "Game Design"],
+      "Gamified mobile app helping users identify and manage food intolerances through structured challenges, progress tracking, and habit loops over a 14-day programme. Built for Viatolea Challenge.",
+    stack: ["React Native", "Expo", "TypeScript", "C#"],
+    href: "https://github.com/khusanovich/Gut-Guardian",
   },
   {
     index: "03",
-    name: "Freelance Web Projects",
+    name: "Local LLM Chat App",
     description:
-      "Production websites for German-speaking clients — from requirements to deployment. Focus on performance, accessibility, and maintainable code.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Ongoing",
+      "Full-stack app enabling users to interact with locally running LLMs (Mistral/Phi via Ollama) through a web interface — no API keys or cloud required. FastAPI backend handles prompt forwarding; vanilla JS frontend renders responses in real time.",
+    stack: ["FastAPI", "Python", "Ollama", "Mistral", "HTML/CSS/JS"],
+    href: "https://github.com/khusanovich/llm-project",
+  },
+  {
+    index: "04",
+    name: "Uzbek-German AI Teacher",
+    description:
+      "AI-powered language learning assistant for Uzbek-German translation and language practice, leveraging LLM technology for interactive learning experiences.",
+    stack: ["Python", "LLM", "AI"],
+    href: "https://github.com/khusanovich/Uzbek-German-AI-Teacher",
+  },
+  {
+    index: "05",
+    name: "Jobwiese.com",
+    description:
+      "Bilingual (DE/EN) marketing website for a German job portal with locale-based routing and server-side transactional email delivery via Resend API.",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Resend API", "Netlify"],
+    href: "https://github.com/khusanovich/jobwiese.com",
+  },
+  {
+    index: "06",
+    name: "VEN-Marketing.com",
+    description:
+      "Zero-dependency single-page marketing site with animated canvas, live counters, scrolling ticker, and bilingual (DE/EN) toggle. Built with vanilla technologies for maximum performance.",
+    stack: ["HTML5", "Vanilla CSS", "JavaScript", "PHP"],
+    href: "https://github.com/khusanovich/VEN-Marketing.com",
+  },
+  {
+    index: "07",
+    name: "California Housing Price Prediction",
+    description:
+      "Machine learning project modeling housing costs for a California construction company using regression techniques and feature engineering.",
+    stack: ["Python", "Jupyter Notebook", "scikit-learn", "Pandas", "NumPy"],
+    href: "https://github.com/khusanovich/Machine_Learning",
+  },
+  {
+    index: "08",
+    name: "Data Science & AI Portfolio",
+    description:
+      "Collection of data science and AI projects completed in Google Colab and Jupyter Notebook, covering various ML/AI techniques and algorithms.",
+    stack: ["Python", "Jupyter Notebook", "ML", "Data Science"],
+    href: "https://github.com/khusanovich/Data_Science_and_AI",
   },
 ];
 
