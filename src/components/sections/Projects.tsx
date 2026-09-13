@@ -12,6 +12,22 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     index: "01",
+    name: "AI-Based Adaptive Learning Assistant",
+    description:
+      "Bachelor thesis research prototype demonstrating three design principles for intelligent tutoring systems: personalized adaptive content based on student materials, context-aware conversational interface grounded in documents, and transparent AI reasoning with visible sources. Features RAG pipeline with semantic search, document chunking, quiz tracking, and AI-powered adaptive question generation.",
+    stack: ["Next.js", "TypeScript", "Supabase", "pgvector", "Google Gemini API", "RAG"],
+    href: "https://github.com/khusanovich/ba-prototype",
+  },
+  {
+    index: "02",
+    name: "Full AI Engineer Portfolio",
+    description:
+      "Modern, responsive portfolio website showcasing projects, research, and professional work. Built with Next.js 16 and TypeScript, featuring smooth animations, dark theme, optimized font loading, and deployed on Vercel with custom domain integration.",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+    href: "https://github.com/khusanovich/portfolio",
+  },
+  {
+    index: "03",
     name: "MeinHelfer",
     description:
       "Full-stack managed marketplace for booking trusted service providers (moving, cleaning, gardening). Features async FastAPI backend with JWT authentication, PostgreSQL database, and Dockerized production deployment.",
@@ -19,7 +35,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/MeinHelfer",
   },
   {
-    index: "02",
+    index: "04",
     name: "Gut Guardian",
     description:
       "Gamified mobile app helping users identify and manage food intolerances through structured challenges, progress tracking, and habit loops over a 14-day programme. Built for Viatolea Challenge.",
@@ -27,7 +43,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/Gut-Guardian",
   },
   {
-    index: "03",
+    index: "05",
     name: "Local LLM Chat App",
     description:
       "Full-stack app enabling users to interact with locally running LLMs (Mistral/Phi via Ollama) through a web interface — no API keys or cloud required. FastAPI backend handles prompt forwarding; vanilla JS frontend renders responses in real time.",
@@ -35,7 +51,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/llm-project",
   },
   {
-    index: "04",
+    index: "06",
     name: "Uzbek-German AI Teacher",
     description:
       "AI-powered language learning assistant for Uzbek-German translation and language practice, leveraging LLM technology for interactive learning experiences.",
@@ -43,7 +59,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/Uzbek-German-AI-Teacher",
   },
   {
-    index: "05",
+    index: "07",
     name: "Jobwiese.com",
     description:
       "Bilingual (DE/EN) marketing website for a German job portal with locale-based routing and server-side transactional email delivery via Resend API.",
@@ -51,7 +67,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/jobwiese.com",
   },
   {
-    index: "06",
+    index: "08",
     name: "VEN-Marketing.com",
     description:
       "Zero-dependency single-page marketing site with animated canvas, live counters, scrolling ticker, and bilingual (DE/EN) toggle. Built with vanilla technologies for maximum performance.",
@@ -59,7 +75,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/VEN-Marketing.com",
   },
   {
-    index: "07",
+    index: "09",
     name: "California Housing Price Prediction",
     description:
       "Machine learning project modeling housing costs for a California construction company using regression techniques and feature engineering.",
@@ -67,7 +83,7 @@ const PROJECTS: Project[] = [
     href: "https://github.com/khusanovich/Machine_Learning",
   },
   {
-    index: "08",
+    index: "10",
     name: "Data Science & AI Portfolio",
     description:
       "Collection of data science and AI projects completed in Google Colab and Jupyter Notebook, covering various ML/AI techniques and algorithms.",
