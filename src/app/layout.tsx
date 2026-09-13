@@ -10,23 +10,23 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://asliddin-ergashev.com"),
-  title: "Asliddin Ergashev — Student & Freelance Web Developer",
+  metadataBase: new URL("https://fullaiengineer.com"),
+  title: "Asliddin Ergashev — Full AI Engineer & Developer",
   description:
-    "CS/IS student at University of Bamberg and freelance web developer. Building at the intersection of academic research and technical craft.",
+    "CS/IS student at University of Bamberg and full AI engineer. Building at the intersection of academic research, AI engineering, and technical craft.",
   openGraph: {
     type: "website",
-    url: "https://asliddin-ergashev.com",
-    title: "Asliddin Ergashev — Student & Freelance Web Developer",
+    url: "https://fullaiengineer.com",
+    title: "Asliddin Ergashev — Full AI Engineer & Developer",
     description:
-      "CS/IS student at University of Bamberg and freelance web developer. Building at the intersection of academic research and technical craft.",
-    siteName: "Asliddin Ergashev",
+      "CS/IS student at University of Bamberg and full AI engineer. Building at the intersection of academic research, AI engineering, and technical craft.",
+    siteName: "Asliddin Ergashev - Full AI Engineer",
   },
   twitter: {
-    card: "summary",
-    title: "Asliddin Ergashev — Student & Freelance Web Developer",
+    card: "summary_large_image",
+    title: "Asliddin Ergashev — Full AI Engineer & Developer",
     description:
-      "CS/IS student at University of Bamberg and freelance web developer.",
+      "CS/IS student and full AI engineer. Building at the intersection of AI, research, and technical craft.",
   },
 };
 
