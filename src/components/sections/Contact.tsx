@@ -6,7 +6,7 @@ import FadeIn from "@/components/FadeIn";
 const LINKS = [
   { label: "Email",    display: "a.khusanovich@gmail.com",        href: "mailto:a.khusanovich@gmail.com" },
   { label: "GitHub",   display: "github.com/khusanovich",          href: "https://github.com/khusanovich" },
-  { label: "LinkedIn", display: "linkedin.com/in/asliddin-ergashev", href: "https://linkedin.com/in/asliddin-ergashev" },
+  { label: "LinkedIn", display: "linkedin.com/in/asliddin-khusanovich", href: "https://www.linkedin.com/in/asliddin-khusanovich" },
 ];
 
 export default function Contact() {
