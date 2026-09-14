@@ -11,22 +11,22 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fullaiengineer.com"),
-  title: "Asliddin Ergashev — Full AI Engineer & Developer",
+  title: "Full Stack AI Engineer | AI Integration Specialist",
   description:
-    "CS/IS student at University of Bamberg and full AI engineer. Building at the intersection of academic research, AI engineering, and technical craft.",
+    "Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.",
   openGraph: {
     type: "website",
     url: "https://fullaiengineer.com",
-    title: "Asliddin Ergashev — Full AI Engineer & Developer",
+    title: "Full Stack AI Engineer | AI Integration Specialist",
     description:
-      "CS/IS student at University of Bamberg and full AI engineer. Building at the intersection of academic research, AI engineering, and technical craft.",
+      "Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.",
     siteName: "Asliddin Ergashev - Full AI Engineer",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asliddin Ergashev — Full AI Engineer & Developer",
+    title: "Full Stack AI Engineer | AI Integration Specialist",
     description:
-      "CS/IS student and full AI engineer. Building at the intersection of AI, research, and technical craft.",
+      "Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.",
   },
 };
 
