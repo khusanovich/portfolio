@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
 const NAV_LINKS = [
-  { label: "About",    href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
-  { label: "Notes",    href: "#notes" },
-  { label: "Vlog",     href: "#vlog" },
-  { label: "Contact",  href: "#contact" },
+  { label: "About",        href: "#about" },
+  { label: "Projects",     href: "#projects" },
+  { label: "Research",     href: "#research" },
+  { label: "Notes",        href: "#notes" },
+  { label: "Learning Hub", href: "#learning-hub" },
+  { label: "Contact",      href: "#contact" },
 ];
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
