@@ -21,12 +21,21 @@ export const metadata: Metadata = {
     description:
       "Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.",
     siteName: "Asliddin Ergashev - Full AI Engineer",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Full Stack AI Engineer | AI Integration Specialist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Full Stack AI Engineer | AI Integration Specialist",
     description:
       "Bringing AI innovation into real-world business solutions. Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications.",
+    images: ["/opengraph-image"],
   },
 };
 
