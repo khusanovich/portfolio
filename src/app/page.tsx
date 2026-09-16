@@ -3,6 +3,7 @@ import Navbar         from "@/components/Navbar";
 import Hero           from "@/components/sections/Hero";
 import About          from "@/components/sections/About";
 import Projects       from "@/components/sections/Projects";
+import Services       from "@/components/sections/Services";
 import Research       from "@/components/sections/Research";
 import Notes          from "@/components/sections/Notes";
 import LearningHub    from "@/components/sections/LearningHub";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
+        <Services />
         <Research />
         <Notes />
         <LearningHub />
