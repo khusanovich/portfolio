@@ -9,11 +9,6 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
-  // Fetch the profile photo
-  const imageData = await fetch(
-    new URL('../../public/foto.png', import.meta.url)
-  ).then((res) => res.arrayBuffer())
-
   return new ImageResponse(
     (
       <div
@@ -65,7 +60,7 @@ export default async function Image() {
             }}
           >
             <img
-              src={`data:image/png;base64,${Buffer.from(imageData).toString('base64')}`}
+              src="https://fullaiengineer.com/foto.png"
               width="300"
               height="300"
               style={{
