@@ -110,6 +110,14 @@ export default function Hero() {
                   →
                 </span>
               </Link>
+              <a
+                href="https://calendly.com/a-khusanovich/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-accent text-background font-sans text-sm font-semibold tracking-wide hover:bg-accent/90 transition-all duration-200"
+              >
+                📅 Book a Call
+              </a>
               <Link
                 href="#contact"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-lg border-2 border-muted/30 text-foreground font-sans text-sm font-medium tracking-wide hover:border-accent hover:text-accent transition-all duration-200"

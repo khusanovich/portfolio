@@ -212,6 +212,25 @@ export default function Contact() {
                   </div>
                 ))}
               </div>
+
+              {/* Book a Call CTA */}
+              <div className="mt-12 p-8 bg-background border border-accent/30">
+                <h4 className="text-xl font-bold text-foreground mb-3">
+                  Prefer a Quick Call?
+                </h4>
+                <p className="text-sm text-muted/80 mb-6 leading-relaxed">
+                  Schedule a 30-minute consultation to discuss your project.
+                  We'll explore your needs and how I can help bring your ideas to life.
+                </p>
+                <a
+                  href="https://calendly.com/a-khusanovich/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-background font-semibold rounded-lg hover:bg-accent/90 transition-all duration-200"
+                >
+                  📅 Book a Call
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>
