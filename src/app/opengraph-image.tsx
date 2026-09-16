@@ -9,6 +9,11 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  // Fetch the profile photo
+  const imageData = await fetch(
+    new URL('../../public/foto.png', import.meta.url)
+  ).then((res) => res.arrayBuffer())
+
   return new ImageResponse(
     (
       <div
@@ -16,13 +21,13 @@ export default async function Image() {
           height: '100%',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
           backgroundColor: '#0a0a0a',
           backgroundImage: 'radial-gradient(circle at 25px 25px, #1a1a1a 2%, transparent 0%), radial-gradient(circle at 75px 75px, #1a1a1a 2%, transparent 0%)',
           backgroundSize: '100px 100px',
           position: 'relative',
+          padding: '80px',
         }}
       >
         {/* Accent gradient overlay */}
@@ -37,24 +42,58 @@ export default async function Image() {
           }}
         />
 
-        {/* Main Content */}
+        {/* Left Side - Photo */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '350px',
+            height: '350px',
+            position: 'relative',
+          }}
+        >
+          <div
+            style={{
+              width: '300px',
+              height: '300px',
+              borderRadius: '50%',
+              overflow: 'hidden',
+              border: '4px solid #10b981',
+              display: 'flex',
+              position: 'relative',
+            }}
+          >
+            <img
+              src={`data:image/png;base64,${Buffer.from(imageData).toString('base64')}`}
+              width="300"
+              height="300"
+              style={{
+                objectFit: 'cover',
+                filter: 'grayscale(0.3) brightness(0.95)',
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Right Side - Text Content */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
-            padding: '60px',
-            textAlign: 'center',
+            flex: 1,
+            paddingLeft: '60px',
           }}
         >
           {/* Name */}
           <div
             style={{
-              fontSize: 72,
+              fontSize: 56,
               fontWeight: 700,
               color: '#ffffff',
-              marginBottom: 20,
+              marginBottom: 16,
               letterSpacing: '-0.02em',
             }}
           >
@@ -64,12 +103,10 @@ export default async function Image() {
           {/* Title */}
           <div
             style={{
-              fontSize: 48,
+              fontSize: 36,
               fontWeight: 600,
-              background: 'linear-gradient(90deg, #10b981 0%, #3b82f6 100%)',
-              backgroundClip: 'text',
-              color: 'transparent',
-              marginBottom: 30,
+              color: '#10b981',
+              marginBottom: 20,
             }}
           >
             Full Stack AI Engineer
@@ -78,10 +115,10 @@ export default async function Image() {
           {/* Subtitle */}
           <div
             style={{
-              fontSize: 32,
+              fontSize: 28,
               fontWeight: 500,
-              color: '#10b981',
-              marginBottom: 40,
+              color: '#3b82f6',
+              marginBottom: 30,
             }}
           >
             AI Integration Specialist
@@ -90,11 +127,11 @@ export default async function Image() {
           {/* Description */}
           <div
             style={{
-              fontSize: 24,
+              fontSize: 18,
               color: '#a0a0a0',
-              maxWidth: '900px',
-              lineHeight: 1.5,
-              marginBottom: 40,
+              maxWidth: '550px',
+              lineHeight: 1.6,
+              marginBottom: 30,
             }}
           >
             Specializing in LLM-powered document intelligence, RAG systems, and production-ready AI applications
@@ -103,7 +140,7 @@ export default async function Image() {
           {/* Domain */}
           <div
             style={{
-              fontSize: 28,
+              fontSize: 22,
               fontWeight: 600,
               color: '#10b981',
               letterSpacing: '0.05em',
