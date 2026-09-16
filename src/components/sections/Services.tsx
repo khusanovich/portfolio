@@ -80,6 +80,18 @@ const SERVICES: Service[] = [
       "Training and knowledge transfer",
     ],
   },
+  {
+    icon: "⚙️",
+    title: "Process Automation",
+    description: "Streamline workflows and eliminate repetitive tasks with intelligent automation solutions that save time and reduce errors.",
+    features: [
+      "Business process automation (BPA)",
+      "Workflow optimization and design",
+      "API integrations and data pipelines",
+      "Automated reporting and analytics",
+      "Custom scripts and automation tools",
+    ],
+  },
 ];
 
 function ServiceCard({ service, index }: { service: Service; index: number }) {
