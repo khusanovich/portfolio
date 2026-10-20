@@ -170,15 +170,7 @@ export default function Services() {
               <p className="text-base text-muted/80 mb-8 max-w-2xl mx-auto">
                 Let's discuss how I can help bring your ideas to life with cutting-edge technology and AI integration.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://calendly.com/a-khusanovich/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-accent text-background font-semibold hover:bg-accent/90 transition-all duration-200"
-                >
-                  📅 Book a Call
-                </a>
+              <div className="flex justify-center">
                 <a
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-background transition-all duration-200"
