@@ -7,13 +7,11 @@ const NAV_LINKS = [
   { label: "About",        href: "#about" },
   { label: "Projects",     href: "#projects" },
   { label: "Services",     href: "#services" },
-  { label: "Research",     href: "#research" },
-  { label: "Notes",        href: "#notes" },
-  { label: "Learning Hub", href: "#learning-hub" },
+  { label: "Learning Hub", href: "/learn" },
   { label: "Contact",      href: "#contact" },
 ];
 
-const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
+const SECTION_IDS = NAV_LINKS.filter((l) => l.href.startsWith("#")).map((l) => l.href.slice(1));
 
 const DOCUMENTS = [
   { label: "Resume (EN)", file: "/Asliddin_Ergashev_Resume.pdf" },
@@ -111,8 +109,9 @@ export default function Navbar() {
           {/* Desktop */}
           <ul className="hidden md:flex items-center gap-8" role="list">
             {NAV_LINKS.map(({ label, href }) => {
-              const id = href.slice(1);
-              const active = activeId === id;
+              const isHashLink = href.startsWith("#");
+              const id = isHashLink ? href.slice(1) : "";
+              const active = isHashLink && activeId === id;
               return (
                 <li key={href}>
                   <Link
@@ -185,20 +184,25 @@ export default function Navbar() {
       >
         <nav className="flex flex-col px-6 pt-12 pb-10 flex-1">
           <ul className="space-y-2 flex-1" role="list">
-            {NAV_LINKS.map(({ label, href }, i) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  onClick={close}
-                  className={`block font-sans text-3xl font-bold py-3 transition-all duration-200 ${
-                    menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-                  } ${activeId === href.slice(1) ? "text-accent" : "text-foreground hover:text-accent"}`}
-                  style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ label, href }, i) => {
+              const isHashLink = href.startsWith("#");
+              const id = isHashLink ? href.slice(1) : "";
+              const active = isHashLink && activeId === id;
+              return (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    onClick={close}
+                    className={`block font-sans text-3xl font-bold py-3 transition-all duration-200 ${
+                      menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                    } ${active ? "text-accent" : "text-foreground hover:text-accent"}`}
+                    style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           <div
