@@ -14,7 +14,8 @@ Create a git commit for the current changes following these rules:
    - NO "Co-Authored-By: Claude" attribution
    - NO "Generated with Claude Code" messages
 4. Run `git commit -m "message"` using HEREDOC format
-5. Ask if user wants to push the commit
+5. After successful commit, ask: "Push to remote?"
+6. If user says yes, run `git push` immediately
 
 Example format:
 ```

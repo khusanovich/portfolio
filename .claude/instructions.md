@@ -30,6 +30,12 @@ When creating git commits in this project:
    - After completing significant features
    - When user says "commit" or similar
 
+5. **After committing**:
+   - Always ask: "Push to remote?" or "Would you like me to push?"
+   - Wait for user approval (yes/no)
+   - If yes, immediately run `git push`
+   - Keep it simple and efficient
+
 ## General Guidelines
 
 - Keep code clean and professional

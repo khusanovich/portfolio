@@ -40,7 +40,8 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 1. Check `git status` to see what changed
 2. Stage relevant files with `git add`
 3. Create commit with descriptive message (no attribution)
-4. Ask user if they want to push
+4. After successful commit, ask: "Push to remote?"
+5. If user confirms, immediately run `git push`
 
 ## Important
 
